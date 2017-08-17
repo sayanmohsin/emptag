@@ -96,6 +96,7 @@ $(document).on('click', '.navbar li', function() {
         <a href="https://dribbble.com/ettrics" target="_blank" class="menulink menulink--social">
           <i class="fa fa-dribbble"></i></a>
       </li>
+      <li class="menuitem"><a href="<?= $path?>/logout" class="menulink">Logout</a></li>
     </ul>
   </nav>
 </header>

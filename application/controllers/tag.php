@@ -50,9 +50,10 @@ class Tag extends CI_Controller {
 				$userData = $this->User->checkUser($username, $password);
 				// log_message('info',print_r($userData,TRUE));
 
+				$ip = $this->input->ip_address();
 
 				if ($userData['authStatus'] == FALSE) {
-					echo $userData['authStatus'].","."incorrect username or password";
+						echo $userData['authStatus'].","."incorrect username or password";
 					exit;
 				}elseif ($userData['authStatus'] == TRUE) {
 					// set session user datas
@@ -79,7 +80,7 @@ class Tag extends CI_Controller {
 	$data += $this->Init->dbCustom();
 	// Destroy session data
 	$this->session->sess_destroy();
-	redirect(base_url() . 'admin', 'refresh');
+	redirect(base_url() . 'tag', 'refresh');
 	// header('Location: ' . base_url() . 'admin');
 	// exit;
 	}
