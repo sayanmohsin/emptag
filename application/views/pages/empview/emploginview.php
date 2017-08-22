@@ -48,15 +48,15 @@
 
         <p id="message" class="bg-danger"></p>
 
-        <a id="tagInBtn" class="btn btn-primary btn-large btn-block" href="#">Tag IN</a>
+        <a id="empInBtn" class="btn btn-primary btn-large btn-block" href="#">Login IN</a>
         <a class="login-link" href="#">Lost your password?</a>
       </div>
     </div>
   </div>
 
-<script src="<?= $js ?>/tagview/taggingviewscript.js"></script>
+<script src="<?= $js ?>/empview/emploginviewscript.js"></script>
 
-<script src="<?= $js ?>/tagview/taggedviewscript.js"></script>
+<script src="<?= $js ?>/empview/empdashboardviewscript.js"></script>
 
 </body>
 </html>

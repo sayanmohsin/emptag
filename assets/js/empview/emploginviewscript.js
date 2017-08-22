@@ -1,5 +1,5 @@
-$("#tagInBtn").click(function(){
-  var url = path+"/taggingProcess";
+$("#empInBtn").click(function(){
+  var url = path+"/empLoginProcess";
   var username = $("#login-name").val();
   var password = $("#login-pass").val();
 $.post(url,

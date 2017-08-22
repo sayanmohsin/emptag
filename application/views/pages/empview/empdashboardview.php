@@ -29,7 +29,7 @@
 <link rel="stylesheet" type="text/css" href="<?= $css ?>/allpage.css">
 
 <!-- Admin Custom Style Sheet -->
-<link rel="stylesheet" type="text/css" href="<?= $css ?>/tagview/taggedviewstyle.css">
+<link rel="stylesheet" type="text/css" href="<?= $css ?>/empview/empdashboardviewstyle.css">
 
 <script type="text/javascript">
 var path = "<?= $path; ?>";
@@ -107,7 +107,7 @@ $(document).on('click', '.navbar li', function() {
 
 
 <script src="<?= $js ?>/allpage.js"></script>
-<script src="<?= $js ?>/tagview/taggingviewscript.js"></script>
-<script src="<?= $js ?>/tagview/taggedviewscript.js"></script>
+<script src="<?= $js ?>/empview/emploginviewscript.js"></script>
+<script src="<?= $js ?>/empview/empdashboardviewscript.js"></script>
 </body>
 </html>

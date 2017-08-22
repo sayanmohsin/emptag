@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Tag extends CI_Controller {
+class Emp extends CI_Controller {
 
 	function __construct () {
 			parent::__construct ();
@@ -25,22 +25,22 @@ class Tag extends CI_Controller {
 
 // Show login page
 	public function index() {
-		$data = $this->Init->initPath ('/tag');
+		$data = $this->Init->initPath ('/emp');
 		$data += $this->Init->dbCustom();
 		$data += $this->session->userdata();
 		// log_message('info','sayan ');
 		// log_message('info',print_r($data,TRUE));
 		if($this->session->userdata('loggedIn'))
 		{
-			$this->load->view('pages/tagview/taggedview',$data);
+			$this->load->view('pages/empview/empdashboardview',$data);
 		}else{
-			$this->load->view('pages/tagview/taggingview',$data);
+			$this->load->view('pages/empview/emploginview',$data);
 		}
 	}
 
 	// Check for user login process
-	public function taggingProcess() {
-		$data = $this->Init->initPath ('/admin');
+	public function empLoginProcess() {
+		$data = $this->Init->initPath ('/emp');
 		$data += $this->Init->dbCustom();
 				// set variables from the form
 				$username = $this->input->post('username');
@@ -50,7 +50,9 @@ class Tag extends CI_Controller {
 				$userData = $this->User->checkUser($username, $password);
 				// log_message('info',print_r($userData,TRUE));
 
-				$ip = $this->input->ip_address();
+				$ip = file_get_contents("http://ipecho.net/plain");
+				log_message('info',$ip);
+
 
 				if ($userData['authStatus'] == FALSE) {
 						echo $userData['authStatus'].","."incorrect username or password";
@@ -76,11 +78,11 @@ class Tag extends CI_Controller {
 	}
 	// Logout from admin page
 	public function logout() {
-	$data = $this->Init->initPath ('/admin');
+	$data = $this->Init->initPath ('/emp');
 	$data += $this->Init->dbCustom();
 	// Destroy session data
 	$this->session->sess_destroy();
-	redirect(base_url() . 'tag', 'refresh');
+	redirect(base_url() . 'emp', 'refresh');
 	// header('Location: ' . base_url() . 'admin');
 	// exit;
 	}
