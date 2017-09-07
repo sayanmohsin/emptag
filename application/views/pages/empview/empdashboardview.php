@@ -10,6 +10,12 @@
 <!-- Latest compiled and minified JavaScript -->
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 
+<!-- SemanticUI CSS -->
+<link rel="stylesheet" href="<?= $base_url ?>/assets/SemanticUI/semantic.min.css">
+<!-- SemanticUI JS -->
+<script src="<?= $base_url ?>/assets/SemanticUI/semantic.min.js"></script>
+
+<link rel="stylesheet" href="<?= $base_url ?>/assets/SemanticUI/semantic.min.css">
 <!-- Font Awesome -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
