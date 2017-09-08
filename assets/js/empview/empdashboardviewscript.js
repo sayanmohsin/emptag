@@ -5,4 +5,9 @@ $(document).ready(function(){
     // $("#tagStatus").mouseleave(function(){
     //     $("#emptagbtn").hide();
     // });
+    $("#emptagbtn").click(function(){
+        $('.ui.modal')
+        .modal('show');
+    }); 
 });
+
