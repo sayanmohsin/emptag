@@ -39,6 +39,10 @@
 
 <script type="text/javascript">
 var path = "<?= $path; ?>";
+var username = "<?= $username; ?>";
+var uid = "<?= $uid; ?>";
+var name = "<?= $name; ?>";
+var loginstatus = "<?= $loggedIn; ?>";
 
 $(document).ready(function() {
 
@@ -81,7 +85,7 @@ $(document).on('click', '.navbar li', function() {
 </nav> -->
 
 
-<header class="header">
+<header class="header-nav">
   <div class="burger">
     <div class="burgerpatty"></div>
     <div class="burgerpatty"></div>
@@ -105,43 +109,35 @@ $(document).on('click', '.navbar li', function() {
       <li class="menuitem"><a href="<?= $path?>/logout" class="menulink">Logout</a></li>
     </ul>
   </nav>
-  <a id="emptagbtn" class="tagbtn" href="#">TagIn</a>
+  <a id="emptagbtn" class="tagbtn" href="#">Tag</a>
 
 </header>
 
 
-<main class="ui container">
+<main class="">
     <header id="headerInfo"><h1>Hello <?=$name?></h1></header>
     <div id="tagStatus">
       <p>You are not tagged in</p>
     </div>
 
-
-<div class="ui modal">
-<i class="close icon"></i>
-<div class="header">
-  Profile Picture
-</div>
-<div class="image content">
-  <div class="ui medium image">
-    <img src="/images/avatar/large/chris.jpg">
+    <div class="ui basic modal">
+    <div class="ui icon header">
+    <i class="hand peace icon"></i>
+    </div>
+    <div class="content">
+      <p>You are tagged at 11am</p>
+    </div>
+    <div class="actions">
+      <div class="ui red basic cancel inverted button tagOut">
+        <i class="remove icon"></i>
+        TagOut
+      </div>
+      <div class="ui green ok inverted button tagIn">
+        <i class="checkmark icon"></i>
+        TagIn
+      </div>
+    </div>
   </div>
-  <div class="description">
-    <div class="ui header">We've auto-chosen a profile image for you.</div>
-    <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
-    <p>Is it okay to use this photo?</p>
-  </div>
-</div>
-<div class="actions">
-  <div class="ui black deny button">
-    Nope
-  </div>
-  <div class="ui positive right labeled icon button">
-    Yep, that's me
-    <i class="checkmark icon"></i>
-  </div>
-</div>
-</div> 
 
 </main>
 

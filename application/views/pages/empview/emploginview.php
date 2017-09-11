@@ -5,11 +5,16 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 <!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+<!-- SemanticUI CSS -->
+<link rel="stylesheet" href="<?= $base_url ?>/assets/SemanticUI/semantic.min.css">
+<!-- SemanticUI JS -->
+<script src="<?= $base_url ?>/assets/SemanticUI/semantic.min.js"></script>
 
 <!-- Refer http://silviomoreto.github.io/bootstrap-select/ -->
 <!-- Latest compiled and minified CSS -->
@@ -18,42 +23,36 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
 
 <!-- Login Custom Style Sheet -->
-<link rel="stylesheet" type="text/css" href="<?= $css ?>/adminviewstyle.css">
+<!-- <link rel="stylesheet" type="text/css" href="<?= $css ?>/adminviewstyle.css"> -->
 <!-- Admin Custom Style Sheet -->
-<!-- <link rel="stylesheet" type="text/css" href="<?= $css ?>/dashboardviewstyle.css"> -->
+<link rel="stylesheet" type="text/css" href="<?= $css ?>/empview/emploginviewstyle.css">
 <script>var path = "<?= $path?>"</script>
 </head>
 <body>
-
-  <div class="login">
-    <div class="login-screen">
-      <div class="app-title">
-        <h1>Login</h1>
+<div class="ui center aligned grid">
+  <div id="login-form" class="ui container">
+    <h1 class="ui huge header">
+      Please sign in 
+    </h1>
+    <form class="ui large form">
+      <div class="field">
+        <div class="ui left icon input">
+          <i class="user icon"></i><input name="username" placeholder="Username" type="text" id="login-name">
+        </div>
       </div>
-
-      <div class="login-form">
-        <div class="control-group">
-        <input type="text" class="login-field" value="" placeholder="username" id="login-name">
-        <label class="login-field-icon fui-user" for="login-name"></label>
+      <div class="field">
+        <div class="ui left icon input">
+          <i class="lock icon"></i><input name="password" placeholder="Password" type="password" id="login-pass">
         </div>
-
-        <div class="control-group">
-        <input type="password" class="login-field" value="" placeholder="password" id="login-pass">
-        <label class="login-field-icon fui-lock" for="login-pass"></label>
-        </div>
-
-        <div class="checkbox">
-          <label><input type="checkbox" name="remember_me"> Remember me</label>
-        </div>
-
-        <p id="message" class="bg-danger"></p>
-
-        <a id="empInBtn" class="btn btn-primary btn-large btn-block" href="#">Login IN</a>
-        <a class="login-link" href="#">Lost your password?</a>
       </div>
-    </div>
+      <p id="message"></p>
+      <div id="empInBtn" class="ui fluid large primary submit button">
+        Sign in
+      </div>
+    </form>
   </div>
-
+</div>
+ 
 <script src="<?= $js ?>/empview/emploginviewscript.js"></script>
 
 <script src="<?= $js ?>/empview/empdashboardviewscript.js"></script>

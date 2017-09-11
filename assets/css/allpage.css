@@ -3,7 +3,6 @@ html,body{
   font-family: 'Open Sans', sans-serif;
 }
 
-
 * {
   box-sizing: border-box;
 }
@@ -17,7 +16,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.header {
+.header-nav {
   position: fixed;
   z-index: 5;
   padding-left: 10px;

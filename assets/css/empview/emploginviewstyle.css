@@ -1,0 +1,12 @@
+body {
+    background-color: #eee;
+}
+
+#login-form {
+    margin-top: 6em;
+    max-width: 22em !important;
+}
+
+#message{
+    color: #A50000;
+}

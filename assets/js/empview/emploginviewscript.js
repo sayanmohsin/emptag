@@ -1,3 +1,11 @@
+// $('.ui.form')
+// .form({
+//   fields: {
+//     username : 'empty',
+//     password : ['minLength[6]', 'empty']
+//   }
+// });
+
 $("#empInBtn").click(function(){
   var url = path+"/empLoginProcess";
   var username = $("#login-name").val();
@@ -9,7 +17,7 @@ $.post(url,
       var res = data.split(",");
       status = res[0];
       message = res[1];
-      $('#message').html(message);
+      $('#message').text(message);
       } else {
       // $('html').html(data);
           window.location.href = path; 

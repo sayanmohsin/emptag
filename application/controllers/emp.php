@@ -26,7 +26,6 @@ class Emp extends CI_Controller {
 // Show login page
 	public function index() {
 		$data = $this->Init->initPath ('/emp');
-		$data += $this->Init->dbCustom();
 		$data += $this->session->userdata();
 		// log_message('info','sayan ');
 		// log_message('info',print_r($data,TRUE));
@@ -41,50 +40,61 @@ class Emp extends CI_Controller {
 	// Check for user login process
 	public function empLoginProcess() {
 		$data = $this->Init->initPath ('/emp');
-		$data += $this->Init->dbCustom();
-				// set variables from the form
-				$username = $this->input->post('username');
-				$password = $this->input->post('password');
-				// log_message('info','$username '.$username);
-				// log_message('info','$password '.$password);
-				$userData = $this->User->checkUser($username, $password);
-				// log_message('info',print_r($userData,TRUE));
+		// set variables from the form
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		// log_message('info','$username '.$username);
+		// log_message('info','$password '.$password);
+		$userData = $this->User->checkUser($username, $password);
+		// log_message('info',print_r($userData,TRUE));
 
-				$ip = file_get_contents("http://ipecho.net/plain");
-				log_message('info',$ip);
+		if ($userData['authStatus'] == FALSE) {
+				echo $userData['authStatus'].","."incorrect username or password";
+			exit;
+		}elseif ($userData['authStatus'] == TRUE) {
+			// set session user datas
+			$newdata = array(
+				'uid'  => $userData['uid'],
+				'name'  => $userData['name'],
+				'username'  => $userData['username'],
+				'loggedIn' => TRUE
+				);
 
+			$this->session->set_userdata($newdata);
 
-				if ($userData['authStatus'] == FALSE) {
-						echo $userData['authStatus'].","."incorrect username or password";
-					exit;
-				}elseif ($userData['authStatus'] == TRUE) {
-					// set session user datas
-					$newdata = array(
-						'uid'  => $userData['uid'],
-						'name'  => $userData['name'],
-		        'username'  => $userData['username'],
-		        'loggedIn' => TRUE
-					);
-
-					$this->session->set_userdata($newdata);
-
-					log_message('info',print_r($_SESSION,TRUE));
-					log_message('info',print_r($userData,TRUE));
-					// user login ok
-					// $this->load->view('pages/dashboardview',$data);
-					// header('Location: ' . base_url() . '/admin');
-					exit;
-				}
+			log_message('info',print_r($_SESSION,TRUE));
+			log_message('info',print_r($userData,TRUE));
+			// user login ok
+			// $this->load->view('pages/dashboardview',$data);
+			// header('Location: ' . base_url() . '/admin');
+			exit;
+		}
 	}
+
+		// Check for user login process
+		public function tagProcess() {
+			$data = $this->Init->initPath ('/emp');
+			// set variables from the form
+			$uid = $this->input->post('uid');
+			$tagp = $this->input->post('tagp');
+			$ip = file_get_contents("http://ipecho.net/plain");
+			// log_message('info','$username '.$username);
+			// log_message('info','$password '.$password);
+			$userData = $this->User->checkUser($username, $password);
+			// log_message('info',print_r($userData,TRUE));
+	
+			}
+		}
+
 	// Logout from admin page
 	public function logout() {
-	$data = $this->Init->initPath ('/emp');
-	$data += $this->Init->dbCustom();
-	// Destroy session data
-	$this->session->sess_destroy();
-	redirect(base_url() . 'emp', 'refresh');
-	// header('Location: ' . base_url() . 'admin');
-	// exit;
+		$data = $this->Init->initPath ('/emp');
+		$data += $this->Init->dbCustom();
+		// Destroy session data
+		$this->session->sess_destroy();
+		redirect(base_url() . 'emp', 'refresh');
+		// header('Location: ' . base_url() . 'admin');
+		// exit;
 	}
 
 }
