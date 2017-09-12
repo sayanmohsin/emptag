@@ -74,16 +74,36 @@ class Emp extends CI_Controller {
 		// Check for user login process
 		public function tagProcess() {
 			$data = $this->Init->initPath ('/emp');
+			// $newdata = array(
+			// 	'uid'  => $userData['uid'],
+			// 	'name'  => $userData['name'],
+			// 	'username'  => $userData['username'],
+			// 	'loggedIn' => TRUE
+			// 	);
 			// set variables from the form
 			$uid = $this->input->post('uid');
 			$tagp = $this->input->post('tagp');
+			$dateTime = $this->input->post('dateTime');
 			$ip = file_get_contents("http://ipecho.net/plain");
+			$refIP= '103.214.234.11';
+			// $hostname = gethostbyaddr($_SERVER['REMOTE_ADDR']); 
+			// log_message('info','$hostname '.$hostname);
 			// log_message('info','$username '.$username);
 			// log_message('info','$password '.$password);
-			$userData = $this->User->checkUser($username, $password);
+			if ($ip == $refIP){
+				if($tagp == 0){
+					log_message('info','out');
+					// $processTagOut = $this->User->tagInDb($username, $password);
+				}
+				elseif($tagp == 1){	
+					log_message('info','in');
+					// $processTagIn = $this->User->tagInDb($username, $password);
+				}
+			}	
+			elseif ($ip != $refIP){
 			// log_message('info',print_r($userData,TRUE));
-	
-			}
+				log_message('info','Not Equal');
+			}	
 		}
 
 	// Logout from admin page

@@ -12,10 +12,12 @@ $(document).ready(function(){
     $(".tagIn").click(function(){
         var url = path+"/tagProcess";
         var tagp = 1;
-        $.post("url",
+        dateTime = getDateTime();
+        $.post(url,
         {
           uid: uid,
-          tagp: 1
+          tagp: 1,
+          dateTime: dateTime
         },
         function(data,status){
             alert("Data: " + data + "\nStatus: " + status);
