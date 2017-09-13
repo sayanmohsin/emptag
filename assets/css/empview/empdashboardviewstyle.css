@@ -66,6 +66,13 @@ a{
 #headerInfo{
   width: 50%;
 }
+
+.jc-bs3-container{
+  width: 50%;
+  margin: 0 auto;
+  max-width: 50%;
+  color: #000;
+}
 /*PromoTable*/
 #promoTable tbody tr:hover{
   background-color: #3498DB;

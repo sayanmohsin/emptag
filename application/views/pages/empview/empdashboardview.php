@@ -29,7 +29,8 @@
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
 <script src="https://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
-
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 
 <!-- All Page Style Sheet -->
 <link rel="stylesheet" type="text/css" href="<?= $css ?>/allpage.css">
@@ -110,7 +111,6 @@ $(document).on('click', '.navbar li', function() {
     </ul>
   </nav>
   <a id="emptagbtn" class="tagbtn" href="#">Tag</a>
-
 </header>
 
 

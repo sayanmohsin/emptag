@@ -33,29 +33,13 @@ class user extends CI_Model
           // log_message('info',print_r($userData,TRUE));
           return $userData;
      }
-     function tagIn($usr, $pwd)
+     function tagInDb($usr, $pwd)
      {
-          $pwd = md5($pwd);
-          $this->db->select('*');
-          $this->db->from ('user_admin');
-          $this->db->where('username', $usr);
-          $this->db->where('password', $pwd);
-          $this->db->where('status', 'TRUE');
-          $query = $this->db->get ();
-          if ($query->num_rows() > 0) {
-            foreach ($query->result() as $row){
-              $userData['uid'] = $row -> uid;
-              $userData['name'] = $row -> name;
-              $userData['username'] = $row -> username;
-              $userData['authStatus'] = TRUE;
-            }
-          } else {
-              $userData['authStatus'] = FALSE;
-          }
-
-          // log_message('info','last query '.$this->db->last_query());
-          // log_message('info',print_r($userData,TRUE));
-          return $userData;
+      $this->db->set('status', $promoStatus);
+      $this->db->where('id', $promoID);
+      $this->db->update('coupon');
+      log_message('info','promoStatusChangerDB '.$this->db->last_query());
+      return ($this->db->affected_rows() > 0) ? TRUE : FALSE;
      }
 
      
